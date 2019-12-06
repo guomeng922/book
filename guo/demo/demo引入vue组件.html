@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue"></script> 
+    <script src="https://unpkg.com/http-vue-loader"></script> -->
+    <script type="text/javascript" src="./js/header.js"></script>
+    <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+    <script>
+        // init vConsole
+        var vConsole = new VConsole();
+        console.log('Hello world');
+    </script>
+    
+</head>
+<body>
+
+   <div id="demo">
+     <!-- <my-cpn ref="aaaRef"></my-cpn> -->
+     <common-head :prop="list"></common-head>
+   </div>
+   <script>
+    //    Vue.use(httpVueLoader)
+    //    构建组件构造器
+       const demo = new Vue({
+          el:"#demo",
+          components:{
+            // 'my-cpn': httpVueLoader('./components/aaa.vue'),
+            'common-head':cpn
+          },
+          data:{
+              message:123,
+              list:['a','c','b','h']
+          }
+       })
+    //    Vue.component('common-head',cpn)
+   </script>
+</body>
+</html>

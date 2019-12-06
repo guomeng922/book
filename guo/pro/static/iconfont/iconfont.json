@@ -1,0 +1,37 @@
+{
+  "id": "1521610",
+  "name": "111",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "650733",
+      "name": "分享－理财成就",
+      "font_class": "fenxianglicaichengjiu",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1314418",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3764364",
+      "name": "我的",
+      "font_class": "weibiaoti-",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "7450616",
+      "name": "奖杯",
+      "font_class": "jiangbei",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    }
+  ]
+}

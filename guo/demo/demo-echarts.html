@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue"></script> 
+    <script src="https://unpkg.com/http-vue-loader"></script> -->
+    
+</head>
+<body>
+
+   <div id="demo">
+     <my-cpn></my-cpn>
+   </div>
+
+   <!-- cpn组件内容 -->
+   <template id="myCpn">
+        <div class="hello">
+            <h3>{{msg}}</h3>
+            <div id="chart" style="width:400px;height:400px;"></div>
+        </div>
+   </template>
+
+   <script src="./node_modules/echarts/dist/echarts.js"></script>
+   <script>
+        const cpn = Vue.extend({
+            template:'#myCpn',
+            data() {
+                return {
+                    msg:111111111
+                }
+            },
+            methods:{
+                initEchart() {
+                    var myChart = echarts.init(document.getElementById('chart'));
+                    var options={
+                        xAxis: {
+                            type: 'category',
+                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                        },
+                        yAxis: {
+                            type: 'value'
+                        },
+                        series: [{
+                            data: [820, 932, 901, 934, 1290, 1330, 1320],
+                            type: 'line'
+                        }]
+                    };
+                    myChart.setOption(options)
+                    myChart.on('click', function (params) {
+                        // 控制台打印数据的名称
+                        console.log(params.name);
+                    });
+                }
+            },
+            mounted() {
+                this.initEchart()
+            }
+        })
+
+    //    构建组件构造器
+       const demo = new Vue({
+          el:"#demo",
+          components:{
+            'my-cpn': cpn
+          },
+          data:{
+              message:123
+          }
+       })
+   </script>
+</body>
+</html>
